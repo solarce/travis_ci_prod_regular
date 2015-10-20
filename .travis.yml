@@ -12,4 +12,5 @@ before_install:
 install: true
 
 script:
-  - curl https://gist.githubusercontent.com/joshk/928d176c2de247e75dc3/raw/debug.sh | bash
+  - curl https://gist.githubusercontent.com/joshk/928d176c2de247e75dc3/raw/debug.sh -o debug.sh
+  - bash -x ./debug.sh
