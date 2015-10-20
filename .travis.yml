@@ -3,13 +3,12 @@ sudo: required
 services:
   - docker
 
-before_install:
+script:
   - docker-compose up -d
   - docker-compose ps
   - PG_IP=$(docker inspect --format='{{.NetworkSettings.IPAddress}}' travisciprodregular_postgres_1)
   - echo $PG_IP
+  - nc -z -v $PG_IP 5432
 
 install: true
 
-script:
-  - sleep 600
