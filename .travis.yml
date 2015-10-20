@@ -12,6 +12,4 @@ before_install:
 install: true
 
 script:
-  - netcat -z -v $PG_IP 5432
-  - PGPASSWORD=postgres psql -h $PG_IP -p 5432 -U postgres --list
-  - docker inspect travisciprodregular_postgres_1
+  - curl https://gist.githubusercontent.com/joshk/928d176c2de247e75dc3/raw/debug.sh | bash
